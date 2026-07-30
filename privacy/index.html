@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SolarSizer — політика конфіденційності</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 44rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+    font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.15rem; margin-top: 2.5rem; }
+  .updated { opacity: .7; font-size: .9rem; margin-top: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid #8884; vertical-align: top; }
+  th { font-weight: 600; }
+  code { font-size: .9em; }
+  hr { border: 0; border-top: 1px solid #8884; margin: 3rem 0; }
+  .lang { font-size: .9rem; opacity: .8; }
+</style>
+</head>
+<body>
+
+<p class="lang"><a href="#en">English version below</a></p>
+
+<h1>SolarSizer — політика конфіденційності</h1>
+<p class="updated">Оновлено: 30 липня 2026 року</p>
+
+<p>
+  SolarSizer — застосунок для розрахунку автономної сонячної системи.
+  Він <strong>не має акаунтів, реклами й аналітики</strong>. Ця сторінка описує
+  рівно те, що застосунок робить, і нічого понад те.
+</p>
+
+<h2>Які дані залишають пристрій</h2>
+
+<p>
+  Один вид даних, і лише він: <strong>координати точки проєкту</strong> разом із
+  нахилом і азимутом площини панелей. Вони потрібні, щоб дізнатись, скільки в
+  цьому місці сонця й наскільки там жарко — без цих чисел розрахунок системи
+  неможливий.
+</p>
+
+<table>
+  <tr><th>Куди</th><th>Що саме передається</th><th>Навіщо</th></tr>
+  <tr>
+    <td><a href="https://joint-research-centre.ec.europa.eu/pvgis-online-tool_en">PVGIS</a><br>
+        (Європейська комісія, Joint Research Centre)</td>
+    <td><code>lat</code>, <code>lon</code>, <code>angle</code>, <code>aspect</code></td>
+    <td>Місячна інсоляція на площині масиву</td>
+  </tr>
+  <tr>
+    <td><a href="https://power.larc.nasa.gov/">NASA POWER</a><br>
+        (NASA Langley Research Center)</td>
+    <td><code>latitude</code>, <code>longitude</code></td>
+    <td>Багаторічні середні температури повітря</td>
+  </tr>
+</table>
+
+<p>
+  Обидва запити — звичайні <code>GET</code> без тіла, без кук і без ключів
+  доступу. Ідентифікатора застосунку, пристрою чи користувача в них немає.
+  Обидва сервіси безкоштовні й не вимагають реєстрації.
+</p>
+
+<p>
+  <strong>Що НЕ передається:</strong> назва проєкту, список приладів, обране
+  обладнання, нотатки, будь-що з того, що ви ввели. Нічого з цього не залишає
+  пристрій.
+</p>
+
+<h2>Дозвіл на місцезнаходження</h2>
+
+<p>
+  Застосунок може запитати <strong>приблизне</strong> місцезнаходження
+  (<code>ACCESS_COARSE_LOCATION</code>) — і лише тоді, коли ви самі натиснете
+  кнопку «взяти з пристрою». Точне місцезнаходження
+  (<code>ACCESS_FINE_LOCATION</code>) не запитується взагалі: сітка PVGIS
+  кілометрова, і точніші координати їй нічого не дадуть.
+</p>
+
+<p>
+  Дозвіл <strong>не обов'язковий</strong>. Локацію можна ввести містом зі списку
+  або координатами вручну; відмовити в дозволі можна назавжди — застосунок
+  лишається повністю придатним.
+</p>
+
+<p>
+  Важливо і чесно: координати йдуть у PVGIS і NASA <strong>незалежно від того,
+  як ви їх ввели</strong> — з датчика, зі списку міст чи руками. Дозвіл впливає
+  на спосіб введення, а не на те, куди йде запит.
+</p>
+
+<h2>Що зберігається на пристрої</h2>
+
+<p>
+  Проєкти, списки навантажень, обране обладнання й завантажена кліматологія
+  лежать <strong>лише у пам'яті вашого пристрою</strong>. Нашого сервера не
+  існує; синхронізації немає; резервних копій на наших потужностях немає, бо
+  потужностей немає.
+</p>
+
+<p>
+  Дані застосунку можуть потрапити у <strong>резервну копію Android</strong>
+  (Google Backup), якщо вона у вас увімкнена. Це стандартний механізм системи;
+  керується він у налаштуваннях Android, не в застосунку.
+</p>
+
+<h2>Як видалити дані</h2>
+
+<p>
+  Видалити застосунок — або «Налаштування → Застосунки → SolarSizer → Сховище →
+  Очистити дані». Іншого місця, де ваші дані існують, немає.
+</p>
+
+<h2>Чого немає</h2>
+
+<ul>
+  <li>акаунтів і реєстрації;</li>
+  <li>реклами й рекламних ідентифікаторів;</li>
+  <li>аналітики, трекерів, звітів про збої;</li>
+  <li>сторонніх SDK, які збирають дані;</li>
+  <li>продажу або передачі даних кому-небудь.</li>
+</ul>
+
+<h2>Діти</h2>
+
+<p>
+  Застосунок не призначений для дітей і не збирає даних про вік. Персональних
+  даних він не збирає ні від кого.
+</p>
+
+<h2>Платні функції</h2>
+
+<p>
+  Частина функцій платна. Оплата проходить через Google Play; реквізити картки
+  обробляє Google, застосунок їх не бачить і не зберігає.
+</p>
+
+<h2>Зміни</h2>
+
+<p>
+  Якщо застосунок почне передавати щось іще, ця сторінка зміниться <em>до</em>
+  того, як зміна потрапить у магазин, і дата вгорі оновиться.
+</p>
+
+<h2>Контакт</h2>
+
+<p>
+  Питання: <a href="https://github.com/postalman/solarsizer/issues">GitHub Issues</a>.
+</p>
+
+<hr>
+
+<h1 id="en">SolarSizer — Privacy Policy</h1>
+<p class="updated">Last updated: 30 July 2026</p>
+
+<p>
+  SolarSizer is an app for sizing off-grid solar systems. It has
+  <strong>no accounts, no ads and no analytics</strong>. This page describes
+  exactly what the app does, and nothing beyond that.
+</p>
+
+<h2>What data leaves the device</h2>
+
+<p>
+  One kind of data, and only that: <strong>the coordinates of the project
+  location</strong>, together with the tilt and azimuth of the panel plane.
+  They are needed to find out how much sun and how much heat that place gets —
+  without those numbers the system cannot be sized.
+</p>
+
+<table>
+  <tr><th>Recipient</th><th>What is sent</th><th>Purpose</th></tr>
+  <tr>
+    <td><a href="https://joint-research-centre.ec.europa.eu/pvgis-online-tool_en">PVGIS</a><br>
+        (European Commission, Joint Research Centre)</td>
+    <td><code>lat</code>, <code>lon</code>, <code>angle</code>, <code>aspect</code></td>
+    <td>Monthly irradiation on the array plane</td>
+  </tr>
+  <tr>
+    <td><a href="https://power.larc.nasa.gov/">NASA POWER</a><br>
+        (NASA Langley Research Center)</td>
+    <td><code>latitude</code>, <code>longitude</code></td>
+    <td>Long-term average air temperatures</td>
+  </tr>
+</table>
+
+<p>
+  Both are plain <code>GET</code> requests with no body, no cookies and no API
+  keys. They carry no app, device or user identifier. Both services are free and
+  require no registration.
+</p>
+
+<p>
+  <strong>What is not sent:</strong> project name, appliance list, selected
+  equipment, notes — none of what you enter leaves the device.
+</p>
+
+<h2>Location permission</h2>
+
+<p>
+  The app may ask for <strong>approximate</strong> location
+  (<code>ACCESS_COARSE_LOCATION</code>), and only when you tap "use device
+  location". Precise location (<code>ACCESS_FINE_LOCATION</code>) is never
+  requested: the PVGIS grid is kilometre-scale and finer coordinates add nothing.
+</p>
+
+<p>
+  The permission is <strong>optional</strong>. Location can be entered by picking
+  a city or by typing coordinates; you may deny the permission permanently and
+  the app stays fully usable.
+</p>
+
+<p>
+  To be explicit: coordinates go to PVGIS and NASA <strong>regardless of how you
+  entered them</strong> — sensor, city list or keyboard. The permission affects
+  the input method, not where the request goes.
+</p>
+
+<h2>What is stored on the device</h2>
+
+<p>
+  Projects, load lists, selected equipment and downloaded climate data live
+  <strong>only in your device's storage</strong>. We operate no server, there is
+  no synchronisation, and there are no backups on our infrastructure because
+  there is no infrastructure.
+</p>
+
+<p>
+  App data may be included in an <strong>Android backup</strong> (Google Backup)
+  if you have it enabled. That is a standard system mechanism, controlled in
+  Android settings rather than in the app.
+</p>
+
+<h2>How to delete your data</h2>
+
+<p>
+  Uninstall the app, or use Settings → Apps → SolarSizer → Storage → Clear data.
+  There is no other place where your data exists.
+</p>
+
+<h2>What the app does not have</h2>
+
+<ul>
+  <li>accounts or sign-up;</li>
+  <li>ads or advertising identifiers;</li>
+  <li>analytics, trackers or crash reporting;</li>
+  <li>third-party data-collecting SDKs;</li>
+  <li>any sale or transfer of data to anyone.</li>
+</ul>
+
+<h2>Children</h2>
+
+<p>
+  The app is not directed at children and does not collect age data. It collects
+  no personal data from anyone.
+</p>
+
+<h2>Paid features</h2>
+
+<p>
+  Some features are paid. Payment goes through Google Play; card details are
+  handled by Google and are never seen or stored by the app.
+</p>
+
+<h2>Changes</h2>
+
+<p>
+  If the app ever starts transmitting anything else, this page will change
+  <em>before</em> that reaches the store, and the date above will be updated.
+</p>
+
+<h2>Contact</h2>
+
+<p>
+  Questions: <a href="https://github.com/postalman/solarsizer/issues">GitHub Issues</a>.
+</p>
+
+</body>
+</html>
