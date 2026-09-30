@@ -26,18 +26,19 @@
 <p class="lang"><a href="#en">English version below</a></p>
 
 <h1>SolarSizer — політика конфіденційності</h1>
-<p class="updated">Оновлено: 30 липня 2026 року</p>
+<p class="updated">Оновлено: 1 жовтня 2026 року</p>
 
 <p>
   SolarSizer — застосунок для розрахунку автономної сонячної системи.
-  Він <strong>не має акаунтів, реклами й аналітики</strong>. Ця сторінка описує
-  рівно те, що застосунок робить, і нічого понад те.
+  Він <strong>не має акаунтів і власної аналітики</strong>. Безкоштовна версія
+  показує один рекламний банер Google AdMob; версія Pro його прибирає. Ця
+  сторінка описує рівно те, що застосунок робить, і нічого понад те.
 </p>
 
 <h2>Які дані залишають пристрій</h2>
 
 <p>
-  Один вид даних, і лише він: <strong>координати точки проєкту</strong> разом із
+  Для розрахунку — один вид даних, і лише він: <strong>координати точки проєкту</strong> разом із
   нахилом і азимутом площини панелей. Вони потрібні, щоб дізнатись, скільки в
   цьому місці сонця й наскільки там жарко — без цих чисел розрахунок системи
   неможливий.
@@ -71,14 +72,68 @@
   пристрій.
 </p>
 
+<h2>Реклама (Google AdMob)</h2>
+
+<p>
+  Банер під шапкою безкоштовної версії показує Google Mobile Ads SDK (AdMob).
+  Цей SDK — сторонній, його робить Google, і він сам збирає та передає Google такі дані:
+</p>
+
+<ul>
+  <li><strong>IP-адресу</strong> пристрою — з неї можна оцінити приблизне місцезнаходження;</li>
+  <li><strong>взаємодію з рекламою</strong>: запуск застосунку, покази й натискання;</li>
+  <li><strong>діагностику</strong>: час запуску, зависання, енергоспоживання;</li>
+  <li><strong>ідентифікатори пристрою</strong>: рекламний ідентифікатор Android (Advertising ID) і App Set ID.</li>
+</ul>
+
+<p>
+  Мета — показ реклами, аналітика реклами й захист від шахрайства. Дані
+  передаються зашифрованими (TLS). Як Google їх використовує, описано в
+  <a href="https://policies.google.com/privacy">політиці конфіденційності Google</a> і на сторінці
+  <a href="https://policies.google.com/technologies/partner-sites">«Як Google використовує дані з сайтів і застосунків партнерів»</a>.
+  Проєкти, прилади, обладнання й координати проєкту рекламному SDK
+  <strong>не передаються</strong>.
+</p>
+
+<p>
+  <strong>Згода.</strong> У Європейській економічній зоні, Великій Британії та
+  Швейцарії застосунок перед першим показом реклами запитує згоду через
+  Google User Messaging Platform. Відмова не обмежує жодної функції: реклама
+  тоді або неперсоналізована, або не показується. Змінити вибір можна будь-коли:
+  «Про застосунок → Налаштування конфіденційності реклами».
+</p>
+
+<p>
+  Рекламний ідентифікатор можна скинути або видалити в налаштуваннях Android
+  («Налаштування → Google → Реклама» або «Конфіденційність → Реклама»,
+  залежно від пристрою).
+</p>
+
+<p>
+  <strong>Pro.</strong> У версії Pro банер не показується й реклама не
+  запитується. Сам SDK лишається в застосунку.
+</p>
+
 <h2>Дозвіл на місцезнаходження</h2>
 
 <p>
-  Застосунок може запитати <strong>приблизне</strong> місцезнаходження
-  (<code>ACCESS_COARSE_LOCATION</code>) — і лише тоді, коли ви самі натиснете
-  кнопку «взяти з пристрою». Точне місцезнаходження
-  (<code>ACCESS_FINE_LOCATION</code>) не запитується взагалі: сітка PVGIS
-  кілометрова, і точніші координати їй нічого не дадуть.
+  Застосунок може запитати місцезнаходження — і лише тоді, коли ви самі
+  натиснете кнопку «взяти з пристрою». Оголошені <strong>обидва</strong>
+  дозволи: приблизний (<code>ACCESS_COARSE_LOCATION</code>) і точний
+  (<code>ACCESS_FINE_LOCATION</code>).
+</p>
+
+<p>
+  Розрахунку досить <strong>приблизного</strong>: координати йдуть у PVGIS і
+  NASA за кілометровою сіткою, і точніші нічого їй не дадуть. Точний
+  оголошений з іншої причини — щоб на частині пристроїв узагалі лишилось
+  джерело координат: трапляються апарати, де мережевий провайдер вимкнено
+  системою, і без цього дозволу не працює жоден.
+</p>
+
+<p>
+  Android 12 і новіші показують вам вибір «Точне / Приблизне» у самому
+  діалозі. Вибір лишається за вами: приблизного застосунку достатньо.
 </p>
 
 <p>
@@ -119,17 +174,17 @@
 
 <ul>
   <li>акаунтів і реєстрації;</li>
-  <li>реклами й рекламних ідентифікаторів;</li>
-  <li>аналітики, трекерів, звітів про збої;</li>
-  <li>сторонніх SDK, які збирають дані;</li>
+  <li>власної аналітики, трекерів, звітів про збої;</li>
+  <li>інших сторонніх SDK, які збирають дані, крім Google Mobile Ads і User Messaging Platform (розділ «Реклама»);</li>
   <li>продажу або передачі даних кому-небудь.</li>
 </ul>
 
 <h2>Діти</h2>
 
 <p>
-  Застосунок не призначений для дітей і не збирає даних про вік. Персональних
-  даних він не збирає ні від кого.
+  Застосунок не призначений для дітей і не збирає даних про вік. Сам застосунок
+  персональних даних не збирає ні від кого; що збирає рекламний SDK, описано в
+  розділі «Реклама».
 </p>
 
 <h2>Платні функції</h2>
@@ -149,24 +204,25 @@
 <h2>Контакт</h2>
 
 <p>
-  Питання: <a href="https://github.com/postalman/solarsizer/issues">GitHub Issues</a>.
+  Питання: <a href="mailto:solarsizer.app@gmail.com">solarsizer.app@gmail.com</a>.
 </p>
 
 <hr>
 
 <h1 id="en">SolarSizer — Privacy Policy</h1>
-<p class="updated">Last updated: 30 July 2026</p>
+<p class="updated">Last updated: 1 October 2026</p>
 
 <p>
   SolarSizer is an app for sizing off-grid solar systems. It has
-  <strong>no accounts, no ads and no analytics</strong>. This page describes
+  <strong>no accounts and no analytics of its own</strong>. The free version
+  shows one Google AdMob banner ad; Pro removes it. This page describes
   exactly what the app does, and nothing beyond that.
 </p>
 
 <h2>What data leaves the device</h2>
 
 <p>
-  One kind of data, and only that: <strong>the coordinates of the project
+  For the calculation, one kind of data, and only that: <strong>the coordinates of the project
   location</strong>, together with the tilt and azimuth of the panel plane.
   They are needed to find out how much sun and how much heat that place gets —
   without those numbers the system cannot be sized.
@@ -199,13 +255,69 @@
   equipment, notes — none of what you enter leaves the device.
 </p>
 
+<h2>Advertising (Google AdMob)</h2>
+
+<p>
+  The banner under the header of the free version is served by the Google
+  Mobile Ads SDK (AdMob). It is a third-party SDK made by Google, and it collects
+  and sends to Google:
+</p>
+
+<ul>
+  <li>the device's <strong>IP address</strong>, which may be used to estimate approximate location;</li>
+  <li><strong>ad interactions</strong>: app launch, ad views and taps;</li>
+  <li><strong>diagnostics</strong>: launch time, hang rate, energy use;</li>
+  <li><strong>device identifiers</strong>: the Android advertising ID and app set ID.</li>
+</ul>
+
+<p>
+  The purposes are serving ads, ad analytics and fraud prevention. Data is
+  encrypted in transit (TLS). How Google uses it is described in the
+  <a href="https://policies.google.com/privacy">Google Privacy Policy</a> and in
+  <a href="https://policies.google.com/technologies/partner-sites">"How Google uses information from sites or apps that use our services"</a>.
+  Projects, appliances, equipment and project coordinates are
+  <strong>not</strong> passed to the ads SDK.
+</p>
+
+<p>
+  <strong>Consent.</strong> In the European Economic Area, the UK and
+  Switzerland the app asks for consent through Google's User Messaging Platform
+  before the first ad. Declining limits no feature: ads are then either
+  non-personalised or not shown. You can change your choice at any time under
+  About → Ad privacy settings.
+</p>
+
+<p>
+  You can reset or delete the advertising ID in Android settings (Settings →
+  Google → Ads, or Privacy → Ads, depending on the device).
+</p>
+
+<p>
+  <strong>Pro.</strong> In Pro no banner is shown and no ads are requested. The
+  SDK itself stays in the app.
+</p>
+
 <h2>Location permission</h2>
 
 <p>
-  The app may ask for <strong>approximate</strong> location
-  (<code>ACCESS_COARSE_LOCATION</code>), and only when you tap "use device
-  location". Precise location (<code>ACCESS_FINE_LOCATION</code>) is never
-  requested: the PVGIS grid is kilometre-scale and finer coordinates add nothing.
+  The app may ask for location, and only when you tap "use device location".
+  <strong>Both</strong> permissions are declared: approximate
+  (<code>ACCESS_COARSE_LOCATION</code>) and precise
+  (<code>ACCESS_FINE_LOCATION</code>).
+</p>
+
+<p>
+  The calculation needs only the <strong>approximate</strong> one: coordinates
+  go to PVGIS and NASA on a kilometre-scale grid, and finer ones add nothing to
+  it. The precise permission is declared for a different reason — so that a
+  source of coordinates exists at all on some devices: on certain handsets the
+  network provider is disabled by the system, and without this permission no
+  provider works.
+</p>
+
+<p>
+  Android 12 and newer show you the "Precise / Approximate" choice in the
+  dialog itself. The choice stays yours: approximate is enough for the app.
 </p>
 
 <p>
@@ -246,17 +358,17 @@
 
 <ul>
   <li>accounts or sign-up;</li>
-  <li>ads or advertising identifiers;</li>
-  <li>analytics, trackers or crash reporting;</li>
-  <li>third-party data-collecting SDKs;</li>
+  <li>analytics of its own, trackers or crash reporting;</li>
+  <li>other third-party data-collecting SDKs besides Google Mobile Ads and the User Messaging Platform (see Advertising);</li>
   <li>any sale or transfer of data to anyone.</li>
 </ul>
 
 <h2>Children</h2>
 
 <p>
-  The app is not directed at children and does not collect age data. It collects
-  no personal data from anyone.
+  The app is not directed at children and does not collect age data. The app
+  itself collects no personal data from anyone; what the ads SDK collects is
+  described under Advertising.
 </p>
 
 <h2>Paid features</h2>
@@ -276,7 +388,7 @@
 <h2>Contact</h2>
 
 <p>
-  Questions: <a href="https://github.com/postalman/solarsizer/issues">GitHub Issues</a>.
+  Questions: <a href="mailto:solarsizer.app@gmail.com">solarsizer.app@gmail.com</a>.
 </p>
 
 </body>
